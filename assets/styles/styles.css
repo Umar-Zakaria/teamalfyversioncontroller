@@ -1,0 +1,103 @@
+body {
+  background: #2c3e50;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+  color: white;
+}
+
+.page {
+  padding: 2% 5%;
+  margin: 2% 5%;
+}
+
+.page-intro {
+  background: #34495e;
+  border: 5px solid #2c3e50;
+  text-align: center;
+  display: block;
+  border-radius: 20px;
+  color: white;
+  height: 500px;
+  padding: 2% 3%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.page-intro img {
+  display: block;
+  width: 100%;
+  height: 70%;
+  transform: scale(1.15);
+  transition: transform 6s;
+}
+.page-intro img:hover {
+  transform: scale(1);
+}
+.page-intro h3 {
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  text-align: center;
+  margin-top: 40px;
+}
+.page-form {
+  padding-left: 40px;
+  text-align: center;
+}
+.page-form h2 {
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  text-transform: capitalize;
+  overflow: hidden;
+}
+
+.page-form form {
+  /* padding-left: 70px; */
+  text-align: center;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.input-group {
+  margin-bottom: 40px;
+}
+.page-form form label {
+  margin-right: 30px;
+  font-size: 130%;
+}
+.input-group select {
+  width: 330px;
+  border-radius: 8px;
+}
+.input-group textarea {
+  width: 380px;
+  height: 200px;
+  border-radius: 10px;
+  padding: 20px 20px;
+}
+
+.input-group textarea:focus {
+  background: lightgoldenrodyellow;
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 200;
+}
+.input-group input {
+  margin-right: 20px;
+  width: 120px;
+  color: #2c3e50;
+  font-weight: 300;
+  font-size: 22px;
+  border-radius: 8px;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background: #34495e;
+  padding: 5% 5%;
+  text-align: center;
+}
