@@ -8,6 +8,8 @@ const socket = require("socket.io")(server);
 const { User } = require("./models/users");
 const { Update, validate } = require("./models/updates");
 const { Contact } = require("./models/contacts");
+const mail = require("./services/mail");
+
 mongoose
   .connect(config.get("db"))
   .then((res) => console.log("Connnected"))
@@ -26,6 +28,7 @@ app.post("/updates", async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
   socket.emit("new version", req.body.version);
+  mail(req.body.version, req.body.update);
   const update = new Update({
     version: req.body.version,
     developer: req.body.developer,

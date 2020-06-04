@@ -10,11 +10,14 @@
     <title>Powered By Tuaneka</title>
     <style>
       body {
+      }
+      .row {
+        height: 100vh;
         background: #2c3e50;
         font-family: "Oswald", sans-serif;
       }
-      .row {
-        height: 85vh;
+      .row1 {
+        min-height: 85vh;
       }
       .header-text {
         text-align: center;
@@ -57,25 +60,22 @@
   </head>
   <body>
     <div class="row">
-      <h1 class="header-text">Tuaneka Version Updates</h1>
-      <h3 class="sub-header"><%=version%> Features Include</h3>
-      <div>
-        <p class="updates">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fuga,
-          beatae inventore, nemo qui dicta voluptas exercitationem praesentium
-          recusandae iure rerum nesciunt adipisci nam a. Inventore alias
-          accusamus, sint nemo, maxime ipsam unde voluptatum amet autem
-          excepturi dolorem officia sit omnis praesentium. Temporibus eos,
-          eveniet nemo iste libero dolores nulla ratione modi? Sapiente atque,
-        </p>
+      <div class="row1">
+        <h1 class="header-text">Tuaneka Version Updates</h1>
+        <h3 class="sub-header"><%=version%> Features Include</h3>
+        <div>
+          <p class="updates">
+            <%=updates%>
+          </p>
+        </div>
       </div>
+      <footer class="page-footer">
+        <div class="footer-content">
+          <h3>
+            Powered By <span><a href="https://tuaneka.com"> Tuaneka</a></span>
+          </h3>
+        </div>
+      </footer>
     </div>
-    <footer class="page-footer">
-      <div class="footer-content">
-        <h3>
-          Powered By <span><a href="https://tuaneka.com"> Tuaneka</a></span>
-        </h3>
-      </div>
-    </footer>
   </body>
 </html>
