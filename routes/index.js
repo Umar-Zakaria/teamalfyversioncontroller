@@ -21,7 +21,6 @@ module.exports = (app) => {
   app.use("/assets", express.static("assets"));
 
   app.get("/", (req, res) => {
-    console.log(req.cookies);
     res.render("login");
   });
 
