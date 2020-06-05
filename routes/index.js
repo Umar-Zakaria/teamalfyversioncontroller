@@ -15,14 +15,16 @@ module.exports = (app) => {
       keys: ["unsecureKey"],
     })
   );
+
   app.use(cookieParser());
   app.use(express.json());
   app.use("/assets", express.static("assets"));
 
   app.get("/", (req, res) => {
     console.log(req.cookies);
-    res.render("Login");
+    res.render("login");
   });
+
   app.get("/mail", (req, res) => {
     res.render("mail");
   });
@@ -30,9 +32,11 @@ module.exports = (app) => {
   app.get("/register", (req, res) => {
     res.render("register");
   });
+
   app.get("/updates", auth, (req, res) => {
     res.render("index");
   });
+
   app.get("/logout", (req, res) => {
     res.clearCookie("user");
     res.redirect("/");
