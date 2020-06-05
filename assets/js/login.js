@@ -6,7 +6,9 @@ async function login(email, password) {
     await axios.post("/login", { email, password });
     window.location = "/updates";
   } catch (ex) {
-    alert(ex.response.data);
+    const errorDiv = document.getElementById("error");
+    errorDiv.style.display = "block";
+    errorDiv.innerHTML = ex.response.data;
   }
 }
 document.getElementById("login-form").addEventListener("submit", (event) => {
