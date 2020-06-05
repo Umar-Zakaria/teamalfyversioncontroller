@@ -1,15 +1,26 @@
 const bcrypt = require("bcrypt");
 const express = require("express");
+const session = require("cookie-session");
+const cookieParser = require("cookie-parser");
 const { User, verify } = require("../models/users");
 const { Update, validate } = require("../models/updates");
 const validateBody = require("../middleware/validate-body");
+const auth = require("../middleware/auth");
 
 module.exports = (app) => {
   app.set("view engine", "ejs");
+  app.use(
+    session({
+      maxAge: 24 * 60 * 60 * 1000,
+      keys: ["unsecureKey"],
+    })
+  );
+  app.use(cookieParser());
   app.use(express.json());
   app.use("/assets", express.static("assets"));
 
   app.get("/", (req, res) => {
+    console.log(req.cookies);
     res.render("Login");
   });
   app.get("/mail", (req, res) => {
@@ -19,9 +30,14 @@ module.exports = (app) => {
   app.get("/register", (req, res) => {
     res.render("register");
   });
-  app.get("/updates", (req, res) => {
+  app.get("/updates", auth, (req, res) => {
     res.render("index");
   });
+  app.get("/logout", (req, res) => {
+    res.clearCookie("user");
+    res.redirect("/");
+  });
+
   app.post("/register", validateBody(verify), async (req, res) => {
     const { email, name, password } = req.body;
     let user = await User.findOne({ email: email });
@@ -37,6 +53,7 @@ module.exports = (app) => {
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
     await user.save();
+    res.cookie("user", user.genAuthToken());
     res.send(user);
   });
 
@@ -48,6 +65,7 @@ module.exports = (app) => {
 
     const isValid = await bcrypt.compare(password, user.password);
     if (!isValid) return res.status(400).send("Invalid Email or Password");
+    res.cookie("user", user.genAuthToken());
     res.send(user);
   });
   app.post("/updates", async (req, res) => {

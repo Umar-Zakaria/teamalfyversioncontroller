@@ -1,5 +1,6 @@
 {
   "db": "db",
   "user": "user",
-  "pass": "pass"
+  "pass": "pass",
+  "key": "key"
 }
