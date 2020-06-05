@@ -1,9 +1,16 @@
 let name,
   updates,
   version1 = "";
+
+const editor = CKEDITOR.replace("editor");
+editor.on("change", (event) => {
+  updates = event.editor.getData();
+});
+
 const developers = document.getElementById("developers");
 developers.value = "Sadick Odai";
 const socket = io();
+
 socket.on("new", (msg) => {
   msg.forEach((ms, index) => {
     const option = document.createElement("option");
@@ -38,10 +45,6 @@ async function postToServer(developer, version, update) {
 function handleSelectionChange(target) {
   name = target.value;
 }
-
-document.getElementById("updates").addEventListener("keyup", (event) => {
-  updates = event.target.value;
-});
 
 document.getElementById("version").addEventListener("keyup", (event) => {
   version1 = event.target.value;

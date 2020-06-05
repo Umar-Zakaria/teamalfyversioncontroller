@@ -1,42 +1,13 @@
 const http = require("http");
-const mongoose = require("mongoose");
-config = require("config");
 const express = require("express");
 const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io")(server);
+const { Update } = require("./models/updates");
 const { User } = require("./models/users");
-const { Update, validate } = require("./models/updates");
-const { Contact } = require("./models/contacts");
-const mail = require("./services/mail");
+require("./routes/index")(app);
+require("./db/db")();
 
-mongoose
-  .connect(config.get("db"))
-  .then((res) => console.log("Connnected"))
-  .catch((err) => console.log(err));
-app.set("view engine", "ejs");
-app.use(express.json());
-app.use("/assets", express.static("assets"));
-
-app.get("/", (req, res) => {
-  res.render("index");
-});
-app.get("/mail", (req, res) => {
-  res.render("mail");
-});
-app.post("/updates", async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-  socket.emit("new version", req.body.version);
-  mail(req.body.version, req.body.update);
-  const update = new Update({
-    version: req.body.version,
-    developer: req.body.developer,
-    update: req.body.update,
-  });
-  await update.save();
-  res.send(update);
-});
 socket.on("connection", async () => {
   const users = await User.find();
   const updates = await Update.find();
