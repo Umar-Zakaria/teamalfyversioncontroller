@@ -4,7 +4,6 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io")(server);
 const { Update } = require("./models/updates");
-const { User } = require("./models/users");
 const { Project } = require("./models/projects");
 require("./routes/index")(app, socket);
 require("./db/db")();

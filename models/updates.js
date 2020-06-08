@@ -5,10 +5,12 @@ const updatesSchema = mongoose.Schema({
   version: { type: String, required: true },
   update: { type: String, required: true },
   developer: { type: String, required: true },
-  // project:{type:mongoose.Schema({
-  //   name:{type:String,required:true},
-  //   owner:{type:String,required:true}
-  // })}
+  project: {
+    type: mongoose.Schema({
+      name: { type: String, required: true },
+      owner: { type: String, required: true },
+    }),
+  },
 });
 
 const Update = mongoose.model("Update", updatesSchema);

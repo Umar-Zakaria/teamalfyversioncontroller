@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 const config = require("config");
 const ejs = require("ejs");
-module.exports = (version, updates) => {
+module.exports = (version, updates, project, to) => {
   const transport = {
     service: "gmail",
     host: "smtp.gmail.com",
@@ -15,12 +15,12 @@ module.exports = (version, updates) => {
 
   ejs.renderFile(
     __dirname + "/mailtemplate.ejs",
-    { version: version, updates: updates },
+    { version, updates, project },
     (err, data) => {
       const options = {
         from: "Umar Abanga matroodzak78@gmail.com",
-        to: "umarabanga78@gmail.com",
-        subject: "Tuaneka Updates Mails",
+        to: to,
+        subject: `${project} Updates Mails`,
         html: data,
       };
       if (err) return console.log(err);

@@ -35,7 +35,7 @@ async function postToServer(developer, version, update) {
       version,
       update,
     });
-    window.location = "/";
+    window.location = "/updates";
   } catch (ex) {
     document.getElementById("error").innerHTML = ex.response.data;
     document.getElementById("error").style.display = "block";

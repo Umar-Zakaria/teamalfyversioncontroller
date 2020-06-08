@@ -4,6 +4,7 @@ const session = require("cookie-session");
 const cookieParser = require("cookie-parser");
 const { User, verify } = require("../models/users");
 const { Update, validate } = require("../models/updates");
+const { Project } = require("../models/projects");
 const validateBody = require("../middleware/validate-body");
 const auth = require("../middleware/auth");
 const mail = require("../services/mail");
@@ -72,15 +73,25 @@ module.exports = (app, socket) => {
     res.cookie("user", user.genAuthToken());
     res.send(user);
   });
-  app.post("/updates", async (req, res) => {
+  app.post("/updates", auth, async (req, res) => {
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     socket.emit("new version", req.body.version);
-    mail(req.body.version, req.body.update);
+
+    const project = await Project.findById(req.body.developer);
+    if (!project) return res.status(404).send("Project currently unavailable");
+
+    mail(req.body.version, req.body.update, project.name, project.owner);
+
     const update = new Update({
       version: req.body.version,
-      developer: req.body.developer,
       update: req.body.update,
+      developer: req.user.name,
+      project: {
+        _id: project._id,
+        name: project.name,
+        owner: project.owner,
+      },
     });
     await update.save();
     res.send(update);
