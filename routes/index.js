@@ -6,8 +6,9 @@ const { User, verify } = require("../models/users");
 const { Update, validate } = require("../models/updates");
 const validateBody = require("../middleware/validate-body");
 const auth = require("../middleware/auth");
+const mail = require("../services/mail");
 
-module.exports = (app) => {
+module.exports = (app, socket) => {
   app.set("view engine", "ejs");
   app.use(
     session({
