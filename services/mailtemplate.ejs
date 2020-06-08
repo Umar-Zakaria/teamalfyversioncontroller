@@ -56,12 +56,18 @@
         text-align: center;
         color: white;
       }
+      #out {
+        margin-bottom: 20px;
+      }
+      #out p {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <div class="row">
       <div class="row1">
-        <h1 class="header-text">Hey <%=project%>'ers</h1>
+        <!-- <h1 class="header-text">Hey <%=project%>'ers</h1> -->
         <h3 class="sub-header">
           We have updated the platform to <%=version%>, here are the exciting
           new features
@@ -69,6 +75,10 @@
         <div>
           <div id="out" class="updates">
             <%-updates %>
+            <p>
+              We love it when you provide feedback . Email us at
+              hello@tuaneka.com
+            </p>
           </div>
         </div>
       </div>

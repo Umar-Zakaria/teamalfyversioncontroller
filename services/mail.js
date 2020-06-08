@@ -20,7 +20,7 @@ module.exports = (version, updates, project, to) => {
       const options = {
         from: "Umar Abanga matroodzak78@gmail.com",
         to: to,
-        subject: `${project} Updates Mails`,
+        subject: "Website Updates",
         html: data,
       };
       if (err) return console.log(err);

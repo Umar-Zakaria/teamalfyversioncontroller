@@ -81,7 +81,12 @@ module.exports = (app, socket) => {
     const project = await Project.findById(req.body.developer);
     if (!project) return res.status(404).send("Project currently unavailable");
 
-    mail(req.body.version, req.body.update, project.name, project.owner);
+    mail(
+      req.body.version,
+      req.body.update,
+      project.name,
+      "umarabanga78@gmail.com"
+    );
 
     const update = new Update({
       version: req.body.version,
