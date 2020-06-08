@@ -17,7 +17,7 @@ module.exports = (version, updates) => {
     __dirname + "/mailtemplate.ejs",
     { version: version, updates: updates },
     (err, data) => {
-      options = {
+      const options = {
         from: "Umar Abanga matroodzak78@gmail.com",
         to: "umarabanga78@gmail.com",
         subject: "Tuaneka Updates Mails",
