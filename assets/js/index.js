@@ -14,7 +14,7 @@ const socket = io();
 socket.on("new", (msg) => {
   msg.forEach((ms, index) => {
     const option = document.createElement("option");
-    option.value = ms.name;
+    option.value = ms._id;
     option.innerHTML = ms.name;
     developers.appendChild(option);
   });

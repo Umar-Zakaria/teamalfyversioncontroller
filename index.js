@@ -5,13 +5,14 @@ const server = http.createServer(app);
 const socket = require("socket.io")(server);
 const { Update } = require("./models/updates");
 const { User } = require("./models/users");
+const { Project } = require("./models/projects");
 require("./routes/index")(app);
 require("./db/db")();
 
 socket.on("connection", async () => {
-  const users = await User.find();
+  const projects = await Project.find();
   const updates = await Update.find();
-  socket.emit("new", users);
+  socket.emit("new", projects);
   socket.emit("all updates", updates);
 });
 const PORT = process.env.PORT || 5000;

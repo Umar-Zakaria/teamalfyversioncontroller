@@ -1,6 +1,6 @@
 {
   "db": "db",
-  "user": "user",
-  "pass": "pass",
+  "user": "user1",
+  "pass": "password",
   "key": "key"
 }
