@@ -4,6 +4,7 @@ const ejs = require("ejs");
 module.exports = (version, updates) => {
   const transport = {
     service: "gmail",
+    host: "smtp.gmail.com",
     auth: {
       user: config.get("user"),
       pass: config.get("pass"),
