@@ -10,49 +10,33 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/styles/inex.css" />
+    <link rel="stylesheet" href="/assets/styles/register.css" />
 
     <title>TeamAlfy Version Controller</title>
   </head>
   <body>
     <div class="row">
-      <div class="logo-area col-lg-6">
-        <div class="inner">
-          <img src="/assets/img/teamalfy.jpg" alt="TeamAlfy Logo" />
-          <h3>Crazy About Great Designs</h3>
+      <div class="col-lg-6 first">
+        <div class="sign-in-section">
+          <h1>Welcome to <br />project hub</h1>
+          <a href="/">Sign in</a>
         </div>
       </div>
-      <div class="form-area col-lg-6">
-        <div class="inner-form">
-          <h2>Join The Wonders Makers</h2>
+      <div class="col-lg-6 second">
+        <div class="sign-up-form">
+          <h1>Sign Up</h1>
           <form id="register-form">
             <div
               style="display: none;"
               id="error"
               class="alert alert-danger"
             ></div>
-            <div class="form-component">
-              <label for="">User Name</label>
-              <input id="name" type="text" placeholder="User Name..." />
-            </div>
-            <div class="form-component">
-              <label for="">Email</label>
-              <input id="email" type="email" placeholder="Email..." />
-            </div>
-            <div class="form-component">
-              <label for="">Password</label>
-              <input id="password" type="password" placeholder="Password..." />
-            </div>
-            <input
-              id="submit-button"
-              class="submit"
-              type="submit"
-              value="Register"
-            />
-            <span>Already have Account?<a href="/">Login</a></span>
+            <input id="email" type="email" placeholder="Email" />
+            <input id="password" type="password" placeholder="Password" />
+            <input id="submit-button" type="submit" value="Sign up" />
           </form>
         </div>
       </div>

@@ -10,41 +10,41 @@
       crossorigin="anonymous"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/styles/inex.css" />
+    <link rel="stylesheet" href="/assets/styles/login.css" />
 
     <title>TeamAlfy Version Controller</title>
   </head>
   <body>
     <div class="row">
-      <div class="logo-area col-lg-6">
-        <div class="inner">
-          <img src="/assets/img/teamalfy.jpg" alt="TeamAlfy Logo" />
-          <h3>Crazy About Great Designs</h3>
-        </div>
-      </div>
-      <div class="form-area col-lg-6">
-        <div class="inner-form">
-          <h2>Join The Wonders Makers</h2>
-          <form id="login-form">
+      <div class="col-lg-6 first">
+        <div class="form-content">
+          <h1 class="form-heading">Sign in</h1>
+          <form id="login-form" autocomplete="off">
             <div
               style="display: none;"
-              id="error"
               class="alert alert-danger"
+              id="error"
             ></div>
-            <div class="form-component">
-              <label for="">Email</label>
-              <input id="email" type="email" placeholder="Email..." />
-            </div>
-            <div class="form-component">
-              <label for="">Password</label>
-              <input id="password" type="password" placeholder="Password..." />
-            </div>
-            <input id="submit" class="submit" type="submit" value="Login" />
-            <span>New Here?<a href="/register">Register</a></span>
+            <input
+              id="email"
+              autocomplete="off"
+              type="email"
+              placeholder="Email"
+            />
+            <input id="password" type="password" placeholder="Password" />
+            <input id="submit" type="submit" value="Sign in" />
+            <p>Forgot your password?</p>
           </form>
+        </div>
+      </div>
+      <div class="col-lg-6 second">
+        <div class="signup-section">
+          <h1 class="login-header">Welcome to <br />Project hub!</h1>
+          <p>New here?</p>
+          <a href="/register">Sign up</a>
         </div>
       </div>
     </div>

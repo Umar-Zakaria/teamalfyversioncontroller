@@ -1,0 +1,98 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #020202cc;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.row {
+  margin: 7% 5%;
+  border: 5px solid #2d3436;
+  height: 80vh;
+  border-radius: 20px;
+}
+.first {
+  background: black;
+  color: white;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.second {
+  background: #660066;
+  color: white;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.sign-in-section {
+  padding: 5% 8%;
+}
+.sign-up-form {
+  padding: 5% 8%;
+}
+.sign-in-section h1 {
+  font-weight: 300;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 30%;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  margin-bottom: 8%;
+}
+.sign-in-section a {
+  display: block;
+  width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+  font-size: 25px;
+  text-transform: uppercase;
+  background: #660066;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  height: 50px;
+  padding-top: 2%;
+}
+
+.sign-up-form h1 {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 400;
+  margin-bottom: 80px;
+  text-transform: capitalize;
+}
+.sign-up-form input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 300px;
+  margin-bottom: 40px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 50px;
+  padding-left: 10px;
+  border-radius: 8px;
+  background: #00000029;
+  color: white;
+}
+
+.sign-up-form input[type="submit"] {
+  display: block;
+  width: 160px;
+  margin-right: auto;
+  margin-left: auto;
+  background: #00000029;
+  color: white;
+  font-weight: 300;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 8px;
+  text-transform: uppercase;
+  border: none;
+  height: 50px;
+}
