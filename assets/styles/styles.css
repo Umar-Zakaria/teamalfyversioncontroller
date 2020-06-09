@@ -1,103 +1,161 @@
-body {
-  background: #2c3e50;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  font-family: "Oswald", sans-serif;
-  color: white;
+* {
+  font-family: "Poppins", sans-serif;
 }
-
-.page {
-  padding: 2% 5%;
-  margin: 2% 5%;
-}
-
-.page-intro {
-  background: #34495e;
-  border: 5px solid #2c3e50;
-  text-align: center;
-  display: block;
-  border-radius: 20px;
-  color: white;
-  height: 600px;
-  padding: 2% 3%;
-  overflow: hidden;
-  cursor: pointer;
-}
-.page-intro img {
-  display: block;
+.row {
   width: 100%;
-  height: 70%;
-  transform: scale(1.15);
-  transition: transform 6s;
-}
-.page-intro img:hover {
-  transform: scale(1);
-}
-.page-intro h3 {
+  min-height: 100vh;
   color: white;
-  font-weight: 300;
-  letter-spacing: 1px;
-  word-spacing: 3px;
-  text-align: center;
-  margin-top: 40px;
 }
-.page-form {
-  padding-left: 40px;
-  text-align: center;
+
+.first {
+  background: #660066;
 }
-.page-form h2 {
+
+.second {
+  background: #020202cc;
+}
+.side-content {
+  margin: 5% 7%;
+}
+.side-content h1 {
+  text-align: center;
   font-weight: 400;
-  letter-spacing: 1px;
-  word-spacing: 3px;
+  font-size: 34px;
   text-transform: capitalize;
-  overflow: hidden;
+  margin-bottom: 30px;
+  margin-top: 70px;
 }
-
-.page-form form {
-  /* padding-left: 70px; */
+.updates {
   text-align: center;
+  margin-top: 30%;
+  margin-bottom: 4%;
+}
+.updates span svg {
+  color: white;
+  font-size: 35;
+  margin-right: 10px;
+  font-weight: 400;
+}
+.profile {
+  text-align: center;
+  margin-top: 30%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.profile img {
+  width: 50px;
+  height: 50px;
   display: inline-block;
-  margin-top: 30px;
+  float: left;
+  border-radius: 50%;
+  margin-left: 9%;
+  line-height: 50px;
+}
+.profile p {
+  display: inline-block;
+  margin-left: -18%;
+  font-size: 20px;
+  text-align: left;
+  line-height: 50px;
+}
+.project {
+  margin-top: 15%;
+  text-align: center;
+}
+.project h3 {
+  font-weight: 200;
+  text-transform: capitalize;
+}
+.main-content {
+  margin: 5% 3%;
 }
 
-.input-group {
-  margin-bottom: 40px;
+.main-content h1 {
+  text-align: left;
+  font-weight: 400;
+  font-size: 22px;
+  text-transform: capitalize;
 }
-.page-form form label {
-  margin-right: 30px;
-  font-size: 130%;
+
+.input-area {
+  width: 100%;
+  margin-top: 16%;
 }
-.input-group select {
-  width: 330px;
+.break-even {
+  width: 50%;
+  float: left;
+}
+.break-even::after {
+  content: " ";
+  clear: both;
+}
+.first-content {
+  width: 80%;
+  margin-right: 12%;
+}
+.second-content {
+  width: 80%;
+  margin-left: 12%;
+}
+.second-content label {
+  font-size: 22px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+.second-content select {
+  display: block;
+  width: 70%;
+  height: 50px;
+  background: #020202;
+  color: white;
   border-radius: 8px;
+  padding-left: 8%;
+  border: none;
 }
-.input-group textarea {
-  width: 380px;
-  height: 200px;
-  border-radius: 10px;
-  padding: 20px 20px;
+.first-content label textarea {
+  display: block;
+  margin-bottom: 10%;
 }
 
-.input-group textarea:focus {
-  background: lightgoldenrodyellow;
-  color: #2c3e50;
+.first-content label {
+  font-size: 22px;
+  font-weight: 200;
+  text-transform: capitalize;
+  /* width: 25%; */
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.first-content textarea {
+  width: 70%;
+  height: 100px;
+}
+
+.buttons {
+  margin-top: 70%;
+  margin-left: 8%;
+}
+.buttons button {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+}
+
+.cancel {
+  background: #020202cc;
+  border: 2px solid #660066;
+  border-radius: 8px;
+  color: white;
+  text-transform: capitalize;
   font-size: 20px;
   font-weight: 200;
 }
-.input-group input {
-  margin-right: 20px;
-  width: 120px;
-  color: #2c3e50;
-  font-weight: 300;
-  font-size: 22px;
-  border-radius: 8px;
-}
 
-.footer {
-  width: 100%;
-  height: 100px;
-  background: #34495e;
-  padding: 5% 5%;
-  text-align: center;
+.update {
+  background: #660066;
+  color: white;
+  border-radius: 8px;
+  text-transform: capitalize;
+  font-weight: 200;
+  border: none;
 }

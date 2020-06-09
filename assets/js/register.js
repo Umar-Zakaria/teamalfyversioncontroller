@@ -12,7 +12,7 @@ async function register(email, password) {
     errorDiv.innerHTML = ex.response.data;
   }
 }
-document.getElementById("register-form").addEventListener("submit", (event) => {
+document.getElemPoppinsentById("register-form").addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
